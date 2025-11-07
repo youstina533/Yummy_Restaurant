@@ -1,0 +1,30 @@
+#title, .card-title{
+    color: rgb(237, 61, 111);
+}
+#knowing-info{
+    font-size: 18px;
+}
+.title-div, .main-courses{
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+hr{
+    color: rgb(224, 224, 45);
+    border-width: 5px;
+}
+.card{
+    overflow: hidden;
+}
+.card img{
+   height:300px;
+   transition: transform 0.3s ease;
+}
+.card-text{
+    font-size: 20px;
+}
+.card img:hover{
+    transform: scale(1.1);
+}
+.home{
+    flex:1;
+}

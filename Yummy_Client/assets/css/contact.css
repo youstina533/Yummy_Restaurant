@@ -1,0 +1,20 @@
+.in-touch, .Hours{
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+.in-touch h3 ,.Hours h3{
+    color: rgb(237, 61, 111);
+}
+.contact-label , #days{
+    font-size: 25px;
+}
+.contact-info , #hour{
+    font-size: 20px;
+}
+.in-touch{
+    flex:1;
+}
+.Touch-div , .Hours{
+    background-color:rgb(239, 240, 241);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
