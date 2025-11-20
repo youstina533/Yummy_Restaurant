@@ -1,0 +1,16 @@
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#title{
+    color: rgb(237, 61, 111);
+}
+.our-story-div , .special-div {
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.our-story-div p , .special-div p{
+    font-size: 23px;
+}
+.about{
+    flex:1;
+}
