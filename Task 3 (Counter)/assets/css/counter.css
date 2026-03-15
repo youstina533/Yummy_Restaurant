@@ -1,0 +1,228 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+html,body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-x: hidden;
+}
+:root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --border: #2a2a2a;
+    --text: #f0ede8;
+    --muted: #5a5a5a;
+    --accent: #d4ff5a;
+    --btnhover:#1f1e1e;
+    --radius: 2px;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 0;
+}
+body::before {
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image:
+                    linear-gradient(var(--border) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.4;
+    pointer-events: none;   
+}
+#counter-card{
+    position: relative;
+    margin: 100px 0px 100px 0px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    height: 83vh;
+    min-width:500px;
+    padding: 50px;
+    box-shadow: 0 0 0 1px #ffffff06, 8px 8px 0 0 var(--accent);
+}
+#counter-card::before, #counter-card::after {
+    content: '';
+    position: absolute;
+    width: 12px; 
+    height: 12px;
+    border-color: var(--accent);
+    border-style: solid;
+}
+#counter-card::before {
+    top: -1px; 
+    left: -1px; 
+    border-width: 2px 0 0 2px; 
+}
+#counter-card::after  {
+    bottom: -1px;
+     right: -1px; 
+     border-width: 0 2px 2px 0; 
+}
+ 
+#counter-details h3{
+    font-size: 17px;
+}
+
+#counter-card hr{
+    border: 1px solid var(--border);
+    margin: 10px;
+}
+
+#counter-details p{
+    margin-top: 50px;   
+    text-align: center;
+}
+#current-value-word{
+    font-size: 17px;
+    color: var(--muted);
+}
+#counter-value{
+    margin-top: 100px;
+    font-size: 100px;
+    font-weight: bolder;
+    color: var(--accent);
+}
+#counter-controls{
+    margin: 50px 0px 50px 0px;
+}
+
+#increment-btn, #decrement-btn{
+    width:46%;
+    margin-right: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+#increment-btn{
+   border: 1px solid var(--accent);
+   border-radius: var(--radius);
+   background-color: var(--bg);
+   color: var(--accent);
+   font-size: 17px;
+}
+#increment-btn:hover{
+    background: #d4ff5a12; 
+    border: 1px solid var(--accent);
+    
+}
+#decrement-btn{
+    color: var(--text);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 17px;
+}
+#decrement-btn:hover , #reset-btn:hover{
+    background-color: var(--btnhover);
+    border-color: var(--muted);
+    color:var(--text);
+}
+#decrement-btn:disabled{
+  opacity:0.9;
+  cursor:not-allowed;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color:var(--muted)
+}
+#reset-btn{
+    width:100%;
+    padding: 12px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--muted);
+    font-size: 17px;
+}
+#steps-counter p{
+    color:var(--muted);
+}
+#ops-counter{
+    float: right;
+}
+
+/* ── media queries ───────────────────────────────────────── */
+ 
+/* Tablet: 768px – 1024px */
+@media (max-width: 1024px) {
+    #counter-card {
+        min-width: 420px;
+        padding: 40px;
+        height: auto;
+        margin: 60px 0;
+    }
+    #counter-value {
+        font-size: 80px;
+    }
+}
+ 
+/* Large mobile / small tablet: 480px – 767px */
+@media (max-width: 767px) {
+    body {
+        padding: 20px;
+        align-items: flex-start;
+    }
+    #counter-card {
+        min-width: unset;
+        width: 100%;
+        padding: 32px 24px;
+        margin: 40px 0;
+        box-shadow: 0 0 0 1px #ffffff06, 5px 5px 0 0 var(--accent);
+    }
+    #counter-details h3 {
+        font-size: 14px;
+    }
+    #counter-value {
+        font-size: 72px;
+    }
+    #current-value-word {
+        font-size: 14px;
+    }
+    #increment-btn,
+    #decrement-btn {
+        width: 47%;
+        font-size: 14px;
+        padding: 10px 6px;
+    }
+    #reset-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+ 
+/* Small mobile: up to 479px */
+@media (max-width: 479px) {
+    #counter-card {
+        padding: 24px 16px;
+        margin: 24px 0;
+    }
+    #counter-details p {
+        margin-top: 30px;
+    }
+    #counter-value {
+        font-size: 56px;
+    }
+    #counter-controls {
+        margin: 32px 0;
+    }
+    #increment-btn,
+    #decrement-btn {
+        width: 100%;
+        margin-right: 0;
+        display: block;
+    }
+    #decrement-btn {
+        margin-bottom: 20px;
+    }
+}
+ 
